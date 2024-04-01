@@ -327,3 +327,29 @@ document.addEventListener('DOMContentLoaded', function () {
     notificationContainer.scrollTop = notificationContainer.scrollHeight;
   });
 });
+
+// right side container doors open close option 
+document.addEventListener('DOMContentLoaded', function () {
+  var selectElement = document.getElementById('on-off-right');
+  var mainDoorStatus = document.querySelector('.main-door-status');
+  var hallwayDoorStatus = document.querySelector('.hallway-door-status');
+  var garageDoorStatus = document.querySelector('.garage-door-status');
+  var notificationMessage = document.querySelector('.userinfo-notification');
+
+  selectElement.addEventListener('change', function () {
+      var action = this.value;
+
+      if (action === 'on') {
+          mainDoorStatus.textContent = 'Open';
+          hallwayDoorStatus.textContent = 'Open';
+          garageDoorStatus.textContent = 'Open';
+          notificationMessage.textContent = 'All doors are open';
+      } else {
+          mainDoorStatus.textContent = 'Closed';
+          hallwayDoorStatus.textContent = 'Closed';
+          garageDoorStatus.textContent = 'Closed';
+          notificationMessage.textContent = 'All doors are closed';
+      }
+  });
+});
+

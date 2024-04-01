@@ -119,3 +119,17 @@ var lineChart = createLineChart();
 
 const usernameSpots = document.querySelectorAll('.username');
 usernameSpots.forEach((el) => (el.textContent = localStorage.getItem('name')));
+
+// for right side container toggle on and off
+document.addEventListener('DOMContentLoaded', function () {
+  var selectElement = document.getElementById('on-off-right');
+  var checkboxes = document.querySelectorAll('.for-option-toggle');
+
+  selectElement.addEventListener('change', function () {
+      var state = this.value === 'on';
+
+      checkboxes.forEach(function (checkbox) {
+          checkbox.checked = state;
+      });
+  });
+});

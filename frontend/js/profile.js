@@ -60,3 +60,17 @@ const profileInfo = document.querySelector('.userInfo');
 profileInfo.innerHTML = `Bio: Hey! I'm ${localStorage.getItem(
   'name'
 )} and I am a Machine Learning Engineer as well as a Automation enthusiast passionate and fond of Smart home technologies.`;
+
+// for right side container toggle on and off
+document.addEventListener('DOMContentLoaded', function () {
+  var selectElement = document.getElementById('on-off-right');
+  var checkboxes = document.querySelectorAll('.for-option-toggle');
+
+  selectElement.addEventListener('change', function () {
+      var state = this.value === 'on';
+
+      checkboxes.forEach(function (checkbox) {
+          checkbox.checked = state;
+      });
+  });
+});
